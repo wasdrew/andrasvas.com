@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ANDRAS VAS</title>
+  <meta name="description" content="András Vas — Szeged-based designer and photographer devoted to craft and clarity.">
+  <meta name="keywords" content="András Vas, photographer, designer, Szeged, portfolio, UX, UI, design">
+  <meta property="og:title" content="ANDRAS VAS — Photographer & Designer">
+  <meta property="og:description" content="Szeged-based designer and photographer; shaping systems with purpose and capturing photographs with raw honesty, through patience and consistency.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.andrasvas.com">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <meta name="description" content="Minimal one page portfolio of András Vas. Bio, Photographs, Contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F5F5F5;
+      --text: #0A0A0A;
+      --muted: #151515;
+      --line: #DDDDDD;
+      --accent: #FFC53C;
+      --maxw: 1024px;
+    }
+    html, body { height: 100%; margin: 0; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -25vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(1600px, 200vw, 2800px);
+      height: clamp(1200px, 150vh, 2000px);
+      background: radial-gradient(ellipse at 50% -10%, rgba(255, 210, 100, 0.2) 0%, rgba(255, 145, 60, 0.35) 20%, rgba(180, 150, 255, 0.2) 40%, rgba(120, 200, 255, 0.3) 60%, rgba(140, 255, 180, 0.4) 80%, rgba(255,255,255,0) 100%);
+      z-index: -1;
+      filter: blur(80px) saturate(110%);
+      pointer-events: none;
+    }
+    a {color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header { position: fixed; top: 10px; left: 0; right: 0; backdrop-filter: blur(0px); border-bottom: 0px solid var(--line); z-index: 10; }
+    .head { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-size: 125%; font-weight: 600; letter-spacing: -0.02em; }
+    nav a { display: inline-block; padding: 10px 8px; }
+    nav a:hover { background: rgba(255,255,255,0.4); border-radius: 4px; }
+
+    /* Hero */
+    .hero { position: relative; padding: 25vh 20px 10vh; max-width: var(--maxw); margin: 0 auto; overflow: visible; }
+    .hero h1, .hero p { position: relative; z-index: 1; }
+    .hero h1 { font-size: clamp(28px, 6vw, 56px); line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.02em; }
+    .hero p { font-size: 17px; margin: 0; color: var(--muted); max-width: 46ch; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    section h2 { font-size: clamp(20px, 3vw, 28px); margin: 0 0 20px; letter-spacing: -0.01em; }
+    .lead { font-size:17px; color: var(--muted); max-width: 64ch; }
+
+    /* Works grid */
+    .grid { display: grid; gap: 2px; grid-template-columns: repeat(12, 1fr); }
+    .card { grid-column: span 12; position: relative; overflow: hidden; border: none; }
+    .card img { width: 100%; height: auto; display: block; }
+
+    @media (min-width: 640px) {
+      .card.sm-6 { grid-column: span 6; }
+      .card.sm-8 { grid-column: span 8; }
+      .card.sm-4 { grid-column: span 4; }
+    }
+    @media (min-width: 960px) {
+      .card.md-4 { grid-column: span 4; }
+      .card.md-6 { grid-column: span 6; }
+      .card.md-8 { grid-column: span 8; }
+    }
+
+    /* Contact */
+    .contact-icons { display: flex; gap: 24px; align-items: center; margin-top: 20px; }
+    .contact-icons a { background: var(--accent); color: var(--text); padding: 6px 12px; font-weight: 500; border-radius: 2px; transition: opacity 0.2s ease; }
+    .contact-icons a:hover { opacity: 0.7; }
+
+    /* Footer */
+    footer { padding: 60px 30px 60px 30px  ; color: var(--muted); font-size: 14px; text-align: center; }
+
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap head">
+      <div class="brand"><a href="#home">ANDRAS VAS</a></div>
+      <nav aria-label="Main nav">
+        <a href="#works">Fotók</a>
+        <a href="#about">Bio</a>
+        <a href="#contact">Kapcsolat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>Szenteld az életed az alkotásnak.<br> Hagyd, hogy a mesterség formáljon téged.</h1>
+      <p>Szegedi tervező és fotográfus vagyok; rendszereket formálok a CAS Software-nél és fényképeket készítek nyers őszinteséggel, türelemmel és következetességgel. <a href="#about" ><br><b>Olvass tovább »</b></a></p>
+    </section>
+
+<section id="works">
+      <div class="wrap">
+        <h2>Fotográfiák</h2>
+        <p class="lead">Az igazi szépség ott kezdődik, ahol a tökéletesség véget ér. Azok a pillanatok számítanak, amelyek nyomot hagynak.</p>
+        <div class="grid" aria-live="polite">
+          <article class="card md-6 sm-6">
+            <img src="../assets/Sequence 03.00_00_14_08.Still008.JPG"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/66472252_2370169303198347_1500184992991205523_n.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/FUJI5689.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/DSCF3489.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-6">
+            <img src="../assets/DSCF3848.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-6">
+            <img src="../assets/DSCF9083.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-12">
+            <img src="../assets/FUJI4952.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/57972724_109230263472153_4730614498272847937_n.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/57319901_2360118317592506_1162055938075236811_n.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/FUJI5879.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/IMG_0380 2.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-6">
+            <img src="../assets/IMG_3708-2 2.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-6">
+            <img src="../assets/MeliArpi_0323_IMG_0210 2.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-12">
+            <img src="../assets/VAVAVINFS240614_0024_IMG_6649 2.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/51942546_104499033952877_4747314325806025016_n.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/85120288_219251355913559_401115129561602205_n.jpg"  width="100%">
+          </article>          
+          <article class="card md-6 sm-6">
+            <img src="../assets/220112 Vas 2915 020.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/000016300009-2.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-6">
+            <img src="../assets/DSCF3226.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-6">
+            <img src="../assets/DSCF1079.jpg"  width="100%">
+          </article>
+           <article class="card md-4 sm-12">
+            <img src="../assets/FUJI5596.jpg"  width="100%">
+          </article>
+
+          <article class="card md-6 sm-6">
+            <img src="../assets/DSCF9354 2.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/000015950036-2.jpg"  width="100%">
+          </article>
+                       <article class="card md-6 sm-6">
+            <img src="../assets/EsztiSzilard_0392__MG_0595 2.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/FUJI5098.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/57572899_1047998952055308_2512807827731674431_n.jpg"  width="100%">
+          </article>
+          <article class="card md-6 sm-6">
+            <img src="../assets/50962699_627048474421637_5587548488273183032_n.jpg"  width="100%">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>Bio</h2>
+        <p class="lead">András vagyok, 39 éves. Férj és apa.<br><br>
+Közel két évtizede tervezek termékeket, felületeket, folyamatokat és rendszereket, nemcsak azt alakítva, hogyan néznek ki, hanem azt is, hogyan lélegeznek. A tervezés mellett ezeket az éveket a fényképezőgép mögött töltöttem, fotókat és vizuális anyagokat komponálva ugyanazzal az esztétikai igénnyel és részletpontossággal. Designereket vezetek és mentorálok, fiatalokat tanítok a Szegedi Tudományegyetemen.
+<br><br>
+<b>Számomra a mesterség odaadás. Hosszú, csendes szövetség az idővel. Nem az eltöltött órák számítanak, hanem az, amit beleadsz. Az éjszakák, amikor még dolgozol. A reggelek, amikor újrakezded. A megszámlálhatatlan finomítás, amit soha senki nem lát. Elbuksz, felállsz és lassan megtanulod észrevenni a szépséget az ismétlésben.</b>
+<br><br>          
+Nem a zaj kizárása a cél, hanem az a fókusz, ami mellett megszűnik létezni.<br>
+Ott kezdődik a mesterség. Én pedig ott próbálok maradni.
+<br><br>          
+Gondolatokat és a folyamat töredékeit gyűjtöm a <a href="http://andrasvas.com/jegyzetek"><span style="background-color: rgba(255, 255, 255, 0.5); padding: 8px; border-radius: 4px; "><b>📓 Jegyzetekben</b>.</span></a>
+</p>
+      </div>
+    </section>
+
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Kapcsolat</h2>
+        <p class="lead">Együttműködés vagy printek ügyében írj bátran. Válasz általában egy napon belül érkezik, hacsak nem túl jó éppen a <b>fény</b> ahhoz, hogy otthagyjam.</p>
+        <div class="contact-icons">
+          <a href="mailto:hello@andrasvas.com" aria-label="Email">E-mail</a>
+          <a href="https://www.instagram.com/vas.andras" target="_blank" rel="noreferrer noopener" aria-label="Instagram">Instagram</a>
+          <a href="https://www.threads.net/@vas.andras" target="_blank" rel="noreferrer noopener" aria-label="Threads">Threads</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="y"></span> András Vas. Minden jog fenntartva.
+      <br>
+    <span style="color: #707070;">A képek és tartalmak felhasználása vagy másolása csak engedéllyel lehetséges.
+    <br><br>
+    <span style="background-color: rgba(255, 255, 255, 0.5); padding: 6px; border-radius: 4px; "><a href="https://andrasvas.com">🇬🇧 English</a></span>
+    </span>
+  </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

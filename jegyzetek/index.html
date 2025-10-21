@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jegyzetek és gondolatok</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta name="description" content="András Vas. Gondolatok tervezésről, fotózásról és mesterségről." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F5F5F5;
+      --text: #0A0A0A;
+      --muted: #151515;
+      --line: #DDDDDD;
+      --accent: #FFC53C;
+      --maxw: 1024px;
+    }
+    html, body { height: 100%; margin: 0; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -25vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(1600px, 200vw, 2800px);
+      height: clamp(1200px, 150vh, 2000px);
+      background: radial-gradient(ellipse at 50% -10%, rgba(255, 210, 100, 0.1) 25%, rgba(120, 200, 255, 0.2) 20%, rgba(180, 150, 255, 0.2) 50%, rgba(255, 145, 60, 0.2) 80%, rgba(140, 255, 180, 0.1) 80%, rgba(255,255,255,0) 100%);
+      z-index: -1;
+      filter: blur(80px) saturate(110%);
+      pointer-events: none;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header { position: fixed; top: 10px; left: 0; right: 0; backdrop-filter: blur(0px); background: rgba(245,245,245,0.0); border-bottom: 0px solid var(--line); z-index: 10; }
+    .head { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-size: 125%; font-weight: 600; letter-spacing: -0.02em; line-height: 24px; }
+    nav a { display: inline-block; padding: 10px 8px; }
+    nav a:hover { background: rgba(255,255,255,0.4); }
+
+    main { padding: 45px 0 80px; }
+
+    .hero { padding: 100px 0 50px; }
+    .hero h1 { font-size: clamp(42px, 6vw, 70px); line-height: 1.1; margin: 0 0 20px; letter-spacing: -0.02em; }
+    .hero p { font-size: 18px; margin: 0; color: var(--muted); max-width: 60ch; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
+    .post { grid-column: span 12; display: grid; grid-template-rows: auto 1fr; border: none; background: transparent; border-radius: 0; overflow: hidden; }
+    .thumb { aspect-ratio: 5/4; width: 100%; object-fit: cover; display: block; border-radius: 4px; }
+    .content { padding: 16px 0; display: grid; gap: 0px; }
+    .title { font-weight: 600; font-size: 26px; letter-spacing: -0.02em; line-height: 34px;}
+    .subtitle { color: var(--muted); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden; margin-bottom: 12px; }
+
+    .meta { font-size: 15px; color: #707070; opacity: 1; margin-top: 0;}
+    .readtime {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3 );
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;      
+  padding: 2px 8px;
+  margin-right: 4px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+    .post:hover .title { text-decoration: underline; }
+
+    @media (min-width: 640px) {
+      .post.sm-6 { grid-column: span 6; }
+      .post.sm-4 { grid-column: span 4; }
+    }
+    @media (min-width: 960px) {
+      .post.md-4 { grid-column: span 4; }
+      .post.md-6 { grid-column: span 6; }
+    }
+
+    .pager { display: flex; gap: 16px; justify-content: center; margin-top: 32px; font-weight: 500; }
+    .pager a { color: var(--muted); text-decoration: none; font-size: 15px; }
+    .pager a:hover, .pager a[aria-current="page"] { color: var(--text); text-decoration: underline; }
+
+    footer { padding: 60px 30px 60px 30px ; color: var(--muted); font-size: 14px; text-align: center; }
+
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap head">
+      <div class="brand"><a href="http://andrasvas.com/jegyzetek">ANDRAS VAS, műhelyfényben.</a></div>
+      <nav aria-label="Fő navigáció">
+          <a href="http://andrasvas.com/">andrasvas.com</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>📓 Jegyzetek és gondolatok</h1>
+        <p>Rövid, őszinte írások a tervezés és fotózás határán. A mesterség csendes rétegei, a gyakorlatból és a mindennapokból fakadó tanulságok.</p>
+      </div>
+    </section>
+
+    <section class="list">
+      <div class="wrap">
+        <div class="grid" aria-live="polite">
+          <article class="post md-4 sm-6">
+            <a href="az-analog-lassusag-ertelme.html">
+              <div class="content">
+                <h2 class="title">Az analóg lassúság értelme</h2>
+                 <img class="thumb" src="assets/Cinestill-800-lightleak.jpg" alt="Az analóg lassúság értelme">
+                <p class="subtitle">A digitális technikák világa lüktet. Kattintunk, frissítünk, verziózunk, törlünk, újrakezdünk. A fotózásban és a tervezésben egyaránt végtelen a próbálkozás lehetősége és ezzel együtt eltűnt a tét.</p>
+                <p class="meta">5 perces olvasmány · 2025. október 18.</p>
+              </div>
+            </a>
+          </article>
+          <article class="post md-4 sm-6">
+            <a href="sport-negyven-fele.html">
+              <div class="content">
+                <h2 class="title">Sport negyven felé és azután</h2>
+                 <img class="thumb" src="assets/524587414_23971779609180409_4535349694784580347_n-1.jpg" alt="Cikk borító">
+                <p class="subtitle">Túl vagyok a nyolcadik aktív hetemen. Heti három edzést tűztem ki magam elé: két futás munka után, vagy este — és egy úszás korán reggel, még mielőtt a világ felébred.</p>
+                <p class="meta">3 perces olvasmány · 2025. július 26.</p>
+
+              </div>
+            </a>
+          </article>
+          <article class="post md-4 sm-6">
+            <a href="kino-bw-250.html">
+              <div class="content">
+                <h2 class="title">Kino filmet fűztem a 40 éves Prakticába</h2>
+                 <img class="thumb" src="assets/220112_Vas_2915_020-6e261a49.jpg" alt="Cikk borító">
+                <p class="subtitle">Öcsém még szeptemberben meglepett egy különös ajándékkal: egy 250-es érzékenységű, finomszemcsés, pánkromatikus, fekete-fehér, 35 mm-es mozi-nyersanyaggal. A fajta, amit már nem nagyon látni a boltokban, és amit illik megbecsülni, nem csak elhasználni. Az elmúlt években eladtam a legtöbb analóg gépemet, és valahogy a film is kikopott a kezeim közül. A digitális kényelme alatt elnémult az a fajta várakozás, amit régen minden kocka jelentett. Maradt ugyan néhány kis kompakt a fiók mélyén, de ezt a filmet valami méltóval szerettem volna megetetni.</p>
+                <p class="meta">4 perces olvasmány · 2024. december 30.</p>
+              </div>
+            </a>
+          </article>
+          <article class="post md-4 sm-6">
+            <a href="kodak-vision3.html">
+              <div class="content">
+                <h2 class="title">Kodak Vision3 - Az Eufória sorozat mágiája</h2>
+                 <img class="thumb" src="assets/190702_Vas_027.jpg" alt="Cikk borító">
+                <p class="subtitle">Gondolom nem csak nekem ugrik be Rév Marcell neve az Eufória sorozat hallatán. A produkció néhány héttel ezelőtt elindult a második évaddal az HBO GO-n, melynek sajátossága, hogy Marcell a teljes anyagot analóg filmre forgatta.</p>
+                <p class="meta">2 perces olvasmány · 2022. február 20.</p>
+              </div>
+            </a>
+          </article>
+          <article class="post md-4 sm-6">
+            <a href="feltve-orzott-kincsek.html">
+              <div class="content">
+                <h2 class="title">Féltve őrzött kincseink 50 év után újra életre kelnek</h2>
+                 <img class="thumb" src="assets/IMG_2459.jpg" alt="Cikk borító">
+                <p class="subtitle">Jól indul az év. Édesapám nekem adta apai nagyapám, id. Vas Károly féltve őrzött negatívjait. Számomra ez hatalmas ajándék, főleg így, hogy a fényképezés lett a hivatásom. Nehéz szavakba önteni, mit jelent ez.</p>
+                <p class="meta">3 perces olvasmány · 2022. január 2.</p>
+              </div>
+            </a>
+          </article>          
+        </div>
+
+       
+      </div>
+    </section>
+  </main>
+
+  <footer>
+
+    <div class="wrap">© <span id="y"></span> <a href="https://www.andrasvas.com"> András Vas. </a>Minden jog fenntartva.</div>
+        <span style="color: #707070;">A képek és tartalmak felhasználása vagy másolása csak engedéllyel lehetséges. <br> Tiszteld a munkát, tiszteld a mesterséget.</span><br ><br >
+        <span style="background-color: rgba(255, 255, 255, 0.5); padding: 6px; border-radius: 4px; "><a href="https://andrasvas.com">🏠 Home</a></span>
+</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
