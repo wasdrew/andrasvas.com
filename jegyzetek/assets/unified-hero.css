@@ -148,7 +148,7 @@ footer .note { display: block; max-width: 8200px; color: #707070; }
 .hero__content h1 {
   color: white;
   text-shadow: 0 2px 14px rgba(0,0,0,0.35);
-  font-size: clamp(58px, 6vw, 70px);     
+  font-size: clamp(50px, 6vw, 70px);     
   line-height: 1.1;       
   font-weight: 700;  
   margin-bottom: 12px;
