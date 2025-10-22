@@ -79,13 +79,18 @@ main { padding: 40px 0 0px; }
   font-weight: 700;
 }
 .post-header p.subtitle { color: var(--muted); font-size: 18px; max-width: 100%; margin: 0 0 32px; }
-.post-header .meta { font-size: 15px; color: var(--muted); opacity: 0.8; }
+.post-header .meta { font-size: 17px; color: var(--muted); opacity: 0.8; }
 
 .post-body { display: block; gap: 0px; text-align: left; }
 .post-body p { font-size: 18px; max-width: 100%; margin: 0 0 32px;}
 .post-body img { width: 100%; height: auto; display: block; margin: 0; border-radius: 4px;}
 .post-body b {  display: inline;  font-weight: 600; }
-
+.lead {
+  margin-top: 2.5rem;     
+  margin-bottom: 1.5rem; 
+  font-size: 18px;    
+  line-height: 1.6;   
+}
 
 /* Footer */
 footer {

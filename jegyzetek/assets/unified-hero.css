@@ -161,7 +161,7 @@ footer .note { display: block; max-width: 8200px; color: #707070; }
 .post-body .lead {
   margin-top: 2.5rem;     
   margin-bottom: 1.5rem; 
-  font-size: 1.2rem;    
+  font-size: 18px;    
   line-height: 1.6;   
 }
 header { position: absolute; top: 0; left: 0; right: 0; }
